@@ -14,7 +14,7 @@ const apiController = require('./controllers/apiController');
 apiController(app); // Fire up the controller
 
 app.get('/', function(req, res){
-    res.end('My API works!')
+    res.end('I havent to reload it manualy!')
 });
 
 app.listen(port);
