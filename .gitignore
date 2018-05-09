@@ -1,2 +1,3 @@
-node_modules/
-.vscode/
+.stack-work/
+simplehost.cabal
+*~
