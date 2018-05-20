@@ -1,9 +1,12 @@
+{-# LANGUAGE OverloadedStrings #-}
+
 module Main where
 
 import           Data.Semigroup                ((<>))
 import           Network.Wai.Middleware.Static
 import           Options.Applicative
-import           Web.Scotty                    (middleware, scotty)
+import           Web.Scotty                    (get, middleware, redirect,
+                                                scotty)
 
 data Config = Config
     { directory :: String
@@ -36,4 +39,5 @@ run :: Config -> IO ()
 run (Config d p) = do
     scotty p $ do
         middleware $ staticPolicy (noDots >-> addBase d)
+        get "/" (redirect "/index.html")
 
