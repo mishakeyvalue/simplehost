@@ -14,7 +14,8 @@ config = Config
     <$> strOption
         (  long "directory"
         <> short 'd'
-        <> help "Directory to serve" )
+        <> help "Directory to serve"
+        <> value ".")
     <*> option auto
         ( long "port"
         <> short 'p'
